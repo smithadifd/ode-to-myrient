@@ -112,7 +112,7 @@ Recommend a test run first:
 node src/downloader.js --test
 ```
 
-This downloads one game and verifies the full pipeline (Cloudflare bypass → download → zip verify → extract → log). Once confirmed working, launch the real thing:
+This downloads one game and verifies the full pipeline (Cloudflare session → download → zip verify → extract → log). Once confirmed working, launch the real thing:
 
 ```bash
 node src/downloader.js
