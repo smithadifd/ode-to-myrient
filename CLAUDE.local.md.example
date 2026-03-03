@@ -1,0 +1,38 @@
+# CLAUDE.local.md — Your Local Configuration
+
+Copy this file to `CLAUDE.local.md` and fill in your details.
+Claude Code reads this file for user-specific context.
+
+## My Setup
+
+- **Download directory**: ./roms
+- **Consoles**: 3ds, gamecube, psp, dreamcast
+- **Game selection**: Top 50 per console (USA/World region)
+- **Workers**: 3
+- **Discord webhook**: (paste yours here, or leave blank to disable)
+- **Headless**: false (switch to true once first downloads are confirmed)
+
+## Session Notes
+
+Claude Code: update this section as you monitor. Track things like:
+- Current system being downloaded
+- Active worker assignments
+- Known issues or failures
+- Speed observations
+- Process PIDs to track
+
+Example:
+```
+### 2026-02-28 Session
+- Started 3DS downloads at 10:00 PM, 3 workers
+- PID 12345 (downloader), PID 12346 (restart loop), PID 12347 (monitor)
+- Speed: ~1000 MB/hr per worker
+- 3DS completed at 2:00 AM (45/50, 5 not on Myrient)
+- Moved to GameCube at 2:05 AM
+```
+
+## Known Issues
+
+- Some games may not exist on Myrient (removed or never uploaded). These will be logged as "Not in directory listing" in download_failures.txt — that's expected, not a bug.
+- Cloudflare occasionally expires download tokens mid-flight, causing "saveAs: canceled" errors. The retry logic handles this automatically.
+- Very large files (>2 GB) can trigger timeouts. The 24-hour saveAs timeout should cover this, but monitor closely.

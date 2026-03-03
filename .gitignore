@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment & local config
+.env
+CLAUDE.local.md
+
+# Runtime data
+data/games.json
+data/download_log.txt
+data/download_failures.txt
+data/status.md
+data/.monitor_state
+
+# Temporary download staging
+.rom_zips/
+
+# ROM files (user's actual downloads — never commit these)
+roms/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Playwright state
+playwright-report/
+test-results/

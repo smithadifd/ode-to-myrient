@@ -1,0 +1,22 @@
+{
+  "name": "ode-to-myrient",
+  "version": "1.0.0",
+  "description": "Playwright-based ROM downloader for Myrient with parallel workers, adaptive throttling, and Discord monitoring",
+  "main": "src/downloader.js",
+  "scripts": {
+    "start": "node src/downloader.js",
+    "scrape": "node src/scraper.js",
+    "setup": "npm install && npx playwright install chromium",
+    "monitor": "bash scripts/monitor.sh"
+  },
+  "keywords": ["myrient", "rom", "downloader", "playwright"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "extract-zip": "^2.0.1",
+    "playwright": "^1.58.2",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
