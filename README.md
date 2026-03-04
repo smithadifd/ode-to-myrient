@@ -18,7 +18,7 @@ Myrient sits behind Cloudflare with JA3 TLS fingerprinting. `curl`, `wget`, Pyth
 ### Setup
 
 ```bash
-git clone https://github.com/youruser/ode-to-myrient.git
+git clone https://github.com/smithadifd/ode-to-myrient.git
 cd ode-to-myrient
 npm run setup
 cp .env.example .env
@@ -28,18 +28,22 @@ Edit `.env` with your preferences (download directory, worker count, optional Di
 
 ### With Claude Code (recommended)
 
-Open the project in Claude Code. It reads `CLAUDE.md` and walks you through everything:
+Open the project in Claude Code and start by giving it an objective — what consoles you want, how many games, any preferences. It reads `CLAUDE.md` and takes it from there:
 
 1. Asks which consoles you want
 2. Asks how many games (all, top N, or specific titles)
 3. Scrapes Myrient to build your game manifest
-4. Launches the downloader with monitoring
+4. Launches the downloader in an auto-restart loop
 5. Recovers from errors and keeps you posted via Discord
 
 ```bash
 claude
-# "I want to download ROMs for GameCube and PSP"
+# "I want to download the top 50 GameCube and PSP games"
 ```
+
+Once it's running, it loops autonomously. It's fine to leave unmonitored — nothing will break — but it won't make adjustments or flag issues without you. Prompting it periodically to check in and tweak things (worker count, delays, failed files) gets the best results.
+
+**Claude plan notes:** Claude Pro works but the session length will eat into your message limits. Claude Max 5x is the sweet spot — the downloader isn't taxing at all once it's running. Opus is recommended for setup and decision-making; Sonnet handles monitoring just fine.
 
 ### Manual
 
@@ -144,9 +148,13 @@ roms/                     # Downloaded ROMs (one subdirectory per console)
 - **Rate limiting**: If you see sustained speeds below 500 KB/s or repeated 429 errors, reduce workers or increase `BASE_DELAY_MS`.
 - **Missing games**: Some titles aren't on Myrient. These show up as "Not in directory listing" in the failures log — that's expected, not a bug.
 
-## Background
+## Ode to Myrient
 
-This project was born from a race to archive ROMs from Myrient before it went offline. The name is a tribute to the service and the community that maintained it.
+Myrient has been one of the most important resources in the game preservation community — a massive, well-organized, freely accessible archive spanning dozens of consoles and decades of gaming history. For a lot of us, it was the place to track down childhood games, fill gaps in our libraries, and explore what gaming history had to offer.
+
+When the announcement came that Myrient would be shutting down, I had about a month left. I wanted to preserve as much as I could before it was gone — the games I grew up with, the ones I never got around to, the ones I didn't even know I was missing. This project is the result of that urgency.
+
+The name is exactly what it sounds like. Thank you to everyone who built and maintained Myrient over the years.
 
 ## License
 
