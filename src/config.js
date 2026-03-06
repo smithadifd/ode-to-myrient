@@ -78,6 +78,12 @@ const config = {
     'atari7800':  '7800',
     'pcengine':   'PCE',
     'mastersystem':'SMS',
+    'wiiu':       'WiiU',
+    'dsi':        'DSi',
+    'new3ds':     'N3DS',
+    'ps3':        'PS3',
+    'xbox':       'Xbox',
+    'xbox360':    '360',
   },
 };
 
@@ -103,6 +109,7 @@ async function discord(message) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(payload) },
     });
+    req.on('error', () => {}); // Swallow DNS/network errors — best-effort
     req.write(payload);
     req.end();
   } catch (_) {
