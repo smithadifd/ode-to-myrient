@@ -357,7 +357,7 @@ async function runWorker(workerId, page, context, system, queue, dirEntries) {
 
       if (state.consecFailures >= 3) {
         console.log(`\n  3+ consecutive failures — pausing ${config.consecFailPause / 60_000} min.`);
-        await discord(`⚠️ 3+ consecutive failures — pausing ${config.consecFailPause / 60_000} min`);
+        await discord(`⚠️ 3+ consecutive failures — pausing ${config.consecFailPause / 60_000} min`).catch(() => {});
         await sleep(config.consecFailPause);
         state.consecFailures = 0;
       }
@@ -436,7 +436,7 @@ async function main() {
 
   const userAgent = await page0.evaluate(() => navigator.userAgent);
   console.log(`UA: ${userAgent}\n`);
-  await discord(`🚀 Downloader started — ${CONCURRENCY} workers, ${systems.length} systems queued`);
+  await discord(`🚀 Downloader started — ${CONCURRENCY} workers, ${systems.length} systems queued`).catch(() => {});
 
   try {
     for (const system of systems) {
@@ -515,16 +515,16 @@ async function main() {
       // Discord: system complete
       const sysDone = system.games.filter(g => state.completed.has(`${system.id}/${g.filename}`)).length;
       if (sysDone === system.games.length) {
-        await discord(`🎉 ${system.name} COMPLETE! (${sysDone}/${system.games.length})`);
+        await discord(`🎉 ${system.name} COMPLETE! (${sysDone}/${system.games.length})`).catch(() => {});
       }
     }
 
     console.log('\nAll done!');
-    await discord('🏁 All systems complete!');
+    await discord('🏁 All systems complete!').catch(() => {});
 
   } catch (err) {
     console.error('\nFatal error:', err);
-    await discord(`🚨 Fatal error: ${err.message}`);
+    await discord(`🚨 Fatal error: ${err.message}`).catch(() => {});
   } finally {
     printReport(systems, state.completed);
     console.log('\nClosing browser...');

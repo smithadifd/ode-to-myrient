@@ -54,17 +54,25 @@ const SYSTEM_CATALOG = {
   'wii':        { name: 'Nintendo Wii',            path: '/files/Redump/Nintendo - Wii - NKit RVZ [zstd-19-128k]/' },
   'virtualboy': { name: 'Virtual Boy',             path: '/files/No-Intro/Nintendo - Virtual Boy/' },
   'fds':        { name: 'Famicom Disk System',     path: '/files/No-Intro/Nintendo - Family Computer Disk System (FDS)/' },
+  'wiiu':       { name: 'Nintendo Wii U',          path: '/files/Redump/Nintendo - Wii U - WUX/' },
+  'dsi':        { name: 'Nintendo DSi',            path: '/files/No-Intro/Nintendo - Nintendo DSi (Decrypted)/' },
+  'new3ds':     { name: 'New Nintendo 3DS',        path: '/files/No-Intro/Nintendo - New Nintendo 3DS (Decrypted)/' },
 
   // Sony
   'psx':        { name: 'PlayStation',             path: '/files/Redump/Sony - PlayStation/' },
   'ps2':        { name: 'PlayStation 2',           path: '/files/Redump/Sony - PlayStation 2/' },
   'psp':        { name: 'PlayStation Portable',    path: '/files/Redump/Sony - PlayStation Portable/' },
+  'ps3':        { name: 'PlayStation 3',           path: '/files/Redump/Sony - PlayStation 3/' },
 
   // Sega
   'genesis':    { name: 'Sega Genesis',            path: '/files/No-Intro/Sega - Mega Drive - Genesis/' },
   'dreamcast':  { name: 'Sega Dreamcast',          path: '/files/Redump/Sega - Dreamcast/' },
   'saturn':     { name: 'Sega Saturn',             path: '/files/Redump/Sega - Saturn/' },
   'mastersystem': { name: 'Sega Master System',    path: '/files/No-Intro/Sega - Master System - Mark III/' },
+
+  // Microsoft
+  'xbox':       { name: 'Xbox',                    path: '/files/Redump/Microsoft - Xbox/' },
+  'xbox360':    { name: 'Xbox 360',                path: '/files/Redump/Microsoft - Xbox 360/' },
 
   // Other
   'arcade':     { name: 'Arcade (MAME)',           path: '/files/MAME/MAME Current ROMs (split)/' },
