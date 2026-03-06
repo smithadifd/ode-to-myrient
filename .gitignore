@@ -5,12 +5,9 @@ node_modules/
 .env
 CLAUDE.local.md
 
-# Runtime data
-data/games.json
-data/download_log.txt
-data/download_failures.txt
-data/status.md
-data/.monitor_state
+# Runtime data (keep only .gitkeep)
+data/*
+!data/.gitkeep
 
 # Temporary download staging
 .rom_zips/
