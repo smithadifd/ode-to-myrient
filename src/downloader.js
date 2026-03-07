@@ -266,8 +266,15 @@ async function processGame(workerId, page, context, system, game, idx, total, di
 
   console.log(` done.`);
 
-  // Discord notification (optional, non-blocking)
-  discord(`✅ ${shortName} ${idx}/${total}: ${gameName} (${fmtBytes(finalSize)}, ${elapsedS}s)`).catch(() => {});
+  // Discord notification — throttle for high-volume small-file systems
+  // Only notify every Nth game when total > 20, to avoid webhook spam
+  const discordEveryN = total > 100 ? 50 : total > 20 ? 10 : 1;
+  if (idx % discordEveryN === 0 || idx === total) {
+    const msg = discordEveryN > 1
+      ? `✅ ${shortName} ${idx}/${total} (batch of ${discordEveryN})`
+      : `✅ ${shortName} ${idx}/${total}: ${gameName} (${fmtBytes(finalSize)}, ${elapsedS}s)`;
+    discord(msg).catch(() => {});
+  }
 }
 
 // ── Worker ───────────────────────────────────────────────────────────────────

@@ -84,6 +84,10 @@ const config = {
     'ps3':        'PS3',
     'xbox':       'Xbox',
     'xbox360':    '360',
+    'segacd':     'SCD',
+    '32x':        '32X',
+    'tgcd':       'TGCD',
+    'satellaview':'SNES-S',
   },
 };
 
