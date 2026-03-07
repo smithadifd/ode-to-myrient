@@ -69,6 +69,8 @@ const SYSTEM_CATALOG = {
   'dreamcast':  { name: 'Sega Dreamcast',          path: '/files/Redump/Sega - Dreamcast/' },
   'saturn':     { name: 'Sega Saturn',             path: '/files/Redump/Sega - Saturn/' },
   'mastersystem': { name: 'Sega Master System',    path: '/files/No-Intro/Sega - Master System - Mark III/' },
+  'segacd':     { name: 'Sega CD',                 path: '/files/Redump/Sega - Mega CD & Sega CD/' },
+  '32x':        { name: 'Sega 32X',                path: '/files/No-Intro/Sega - 32X/' },
 
   // Microsoft
   'xbox':       { name: 'Xbox',                    path: '/files/Redump/Microsoft - Xbox/' },
@@ -80,6 +82,8 @@ const SYSTEM_CATALOG = {
   'atari5200':  { name: 'Atari 5200',              path: '/files/No-Intro/Atari - 5200/' },
   'atari7800':  { name: 'Atari 7800',              path: '/files/No-Intro/Atari - 7800/' },
   'pcengine':   { name: 'PC Engine / TurboGrafx',  path: '/files/No-Intro/NEC - PC Engine - TurboGrafx-16/' },
+  'tgcd':       { name: 'TurboGrafx-CD',           path: '/files/Redump/NEC - PC Engine CD & TurboGrafx CD/' },
+  'satellaview':{ name: 'Satellaview',              path: '/files/No-Intro/Nintendo - Satellaview/' },
 };
 
 // ── Scrape a directory listing ───────────────────────────────────────────────
